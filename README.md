@@ -1,18 +1,18 @@
-This package enabled the parsing of binary MSG files
+his package is a port of msg reader (javascript) wich reads and parses email messages saved in (binary) MSG format. It also reads attachments from the saved message.
 
 ## Features
 
-It will parse the MSG file and return a datastructure containing all the text, html and attachments.
+It will parse the MSG file and return a data structure containing all the text, html and attachments.
 
 ## Getting started
 
-Include this library in your Android or IOS flutter App. You could also use it on other dart platforms as it has no external dependancies.
+Include this library in your Android or IOS flutter App.
 
 ## Usage
 
 ```dart
     
-    Uint8List msg = await File('test/test.mg').readAsBytes();
+    Uint8List msg = await File('test/test.msg').readAsBytes();
 
     MsgParseResult result =  await parseMsg(msg);
   
