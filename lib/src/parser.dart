@@ -743,7 +743,7 @@ String _decompressRTF(Uint8List src) {
   int magic = input.getUint32(inPos, Endian.little);
   inPos += 4;
   // note: CRC must be validated only for compressed data (and includes padding)
-  int crc32 = input.getUint32(inPos, Endian.little);
+  //int crc32 = input.getUint32(inPos, Endian.little);
   inPos += 4;
 
   if (compressedSize != src.length - 4) {
@@ -790,7 +790,9 @@ String _decompressRTF(Uint8List src) {
           // note: can't use System.arraycopy, because the referenced
           // bytes can cross through the current out position.
           int end = offset + length;
-          while (offset < end) dst[outPos++] = dst[offset++];
+          while (offset < end) {
+            dst[outPos++] = dst[offset++];
+          }
         }
       }
     } catch (e) {
