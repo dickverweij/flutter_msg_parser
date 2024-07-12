@@ -1,4 +1,4 @@
-his package is a port of msg reader (javascript) wich reads and parses email messages saved in (binary) MSG format. It also reads attachments from the saved message.
+This package is a port of msg reader (javascript) wich reads and parses email messages saved in (binary) MSG format. It also reads attachments from the saved message.
 
 ## Features
 
@@ -14,7 +14,7 @@ Include this library in your Android or IOS flutter App.
     
     Uint8List msg = await File('test/test.msg').readAsBytes();
 
-    MsgParseResult result =  await parseMsg(msg);
+    MsgParseResult result = parseMsg(msg);
   
     print (result.subject);
     print (result.from);
