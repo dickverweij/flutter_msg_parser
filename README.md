@@ -14,7 +14,7 @@ Include this library in your Android or IOS flutter App.
     
     Uint8List msg = await File('test/test.msg').readAsBytes();
 
-    MsgParseResult result = parseMsg(msg);
+    MsgParseResult result =  parseMsg(msg);
   
     print (result.subject);
     print (result.from);
