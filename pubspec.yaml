@@ -1,6 +1,6 @@
 name: flutter_msg_parser
 description: "A parser to parse binary MSG messages, from Microsoft Outlook"
-version: 0.0.2
+version: 0.0.3
 repository: https://github.com/dickverweij/flutter_msg_parser
 
 environment:

@@ -198,8 +198,12 @@ String _rtfToHtml(String rtf) {
   String rtfStripped = rtf.replaceAll(RegExp('\\\\htmlrtf.+\\\\htmlrtf0'), '');
   rtfStripped = rtfStripped.replaceAll(RegExp('\\\\htmlrtf.+'), '');
   rtfStripped = rtfStripped.replaceAll(RegExp('\\\\htmlrtf0'), '');
+  rtfStripped = rtfStripped.replaceAll(RegExp('\\\\par'), '');
   rtfStripped = rtfStripped.replaceAll('{\\*\\htmltag64}', '');
   rtfStripped = rtfStripped.replaceAll('{\\*\\htmltag72}', '');
+  rtfStripped =
+      rtfStripped.replaceAll(RegExp('\\\\li[0-9]+ \\\\fi-[0-9]+'), '');
+  rtfStripped = rtfStripped.replaceAll(RegExp('{\\\\pntext \\*\\\\tab}'), '');
 
   final regEx =
       RegExp('^{\\\\\\*\\\\htmltag[0-9]+[ ]?(.+)}([^}{]*)\$', multiLine: true);
