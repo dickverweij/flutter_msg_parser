@@ -32,7 +32,7 @@ MsgParseResult parseMsg(Uint8List data) {
     );
   }).toList();
 
-  if (result['fieldsData']['rtfBody'] != null) {
+  if (result['fieldsData']['rtfBody'] != null {
     result['fieldsData']['bodyHTML'] = _rtfToHtml(
       result['fieldsData']['rtfBody'],
     );
@@ -194,6 +194,9 @@ var _constants = (
 
 // poor mans rtf to html converter
 String _rtfToHtml(String rtf) {
+  if (rtf == '') {
+    return '';
+  }
   String html = '';
   String rtfStripped = rtf.replaceAll(RegExp('\\\\htmlrtf.+\\\\htmlrtf0'), '');
   rtfStripped = rtfStripped.replaceAll(RegExp('\\\\htmlrtf.+'), '');
