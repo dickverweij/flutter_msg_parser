@@ -32,7 +32,7 @@ MsgParseResult parseMsg(Uint8List data) {
     );
   }).toList();
 
-  if (result['fieldsData']['rtfBody'] != null {
+  if (result['fieldsData']['rtfBody'] != null ) {
     result['fieldsData']['bodyHTML'] = _rtfToHtml(
       result['fieldsData']['rtfBody'],
     );
